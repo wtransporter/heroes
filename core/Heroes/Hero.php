@@ -7,8 +7,10 @@ use app\core\exceptions\WeaponNotAllowedException;
 abstract class Hero
 {
     public array $weapons = [];
+    protected int $health;
 
-    abstract public function allowedWeapons(): array;
+    abstract protected function allowedWeapons(): array;
+    abstract public function reduceHealth(int $value): void;
 
     public function getWeapon(string $weapon): void
     {
