@@ -22,8 +22,12 @@ abstract class Hero
         array_splice($this->weapons, $start, 1);
     }
 
-    public function validate($weapon)
+    protected function validate($weapon)
     {
+        if (count($this->weapons) >= 2) {
+            throw new \Exception("You are not allowed to carry more than two weapons.");
+        }
+
         if (!in_array($weapon, $this->allowedWeapons())) {
             throw new WeaponNotAllowedException("This weapon is not allowed");
         }
