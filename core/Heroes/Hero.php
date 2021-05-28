@@ -2,15 +2,15 @@
 
 namespace app\core\heroes;
 
+use app\core\Gamer;
 use app\core\exceptions\WeaponNotAllowedException;
 
-abstract class Hero
+abstract class Hero extends Gamer
 {
     public array $weapons = [];
     protected int $health;
 
     abstract protected function allowedWeapons(): array;
-    abstract public function reduceHealth(int $value): void;
 
     public function getWeapon(string $weapon): void
     {
@@ -33,10 +33,5 @@ abstract class Hero
         if (!in_array($weapon, $this->allowedWeapons())) {
             throw new WeaponNotAllowedException("This weapon is not allowed");
         }
-    }
-
-    public function getHealth(): int
-    {
-        return $this->health;
     }
 }

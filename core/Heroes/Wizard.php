@@ -10,9 +10,4 @@ class Wizard extends Hero
     {
         return ['magic'];
     }
-
-    public function reduceHealth(int $value): void
-    {
-        $this->health -= $value;
-    }
 }

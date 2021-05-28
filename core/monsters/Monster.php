@@ -2,11 +2,12 @@
 
 namespace app\core\monsters;
 
+use app\core\Gamer;
 use app\core\heroes\Hero;
 
-abstract class Monster
+abstract class Monster extends Gamer
 {
-    public int $health = 150;
+    protected int $health = 150;
 
     abstract public function getAttack(): array;
 

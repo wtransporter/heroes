@@ -10,9 +10,4 @@ class Swordsman extends Hero
     {
         return ['sword', 'spear'];
     }
-    
-    public function reduceHealth(int $value): void
-    {
-        $this->health -= $value;
-    }
 }
