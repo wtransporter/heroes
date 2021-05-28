@@ -34,4 +34,9 @@ abstract class Hero
             throw new WeaponNotAllowedException("This weapon is not allowed");
         }
     }
+
+    public function getHealth(): int
+    {
+        return $this->health;
+    }
 }
